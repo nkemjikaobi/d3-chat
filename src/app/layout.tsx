@@ -4,6 +4,7 @@ import "./globals.css";
 import { PanelLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SearchChats from "@/components/sidebar/SearchChats";
+import AllChats from "@/components/sidebar/AllChats";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -45,6 +46,7 @@ export default function RootLayout({
 							new chat
 						</Button>
 						<SearchChats />
+						<AllChats />
 					</aside>
 					<main className='flex-1 p-4'>{children}</main>
 				</div>
