@@ -3,6 +3,7 @@ import { Roboto, Montserrat, Nunito } from "next/font/google";
 import "./globals.css";
 import { PanelLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SearchChats from "@/components/sidebar/SearchChats";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   description: "AI powered chatbot",
 };
 
-export default function RootLayout({
+export default function RootLayout({  
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -43,6 +44,7 @@ export default function RootLayout({
 						<Button className='bg-brand-opacity-50 hover:bg-brand-opacity-75 capitalize text-white w-full rounded-lg shadow-md'>
 							new chat
 						</Button>
+						<SearchChats />
 					</aside>
 					<main className='flex-1 p-4'>{children}</main>
 				</div>
