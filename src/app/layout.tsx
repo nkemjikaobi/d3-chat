@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Roboto, Montserrat, Nunito } from 'next/font/google';
 import './globals.css';
-import { PanelLeft } from 'lucide-react';
+import { PanelLeft, Settings2, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SearchChats from '@/components/sidebar/SearchChats';
 import AllChats from '@/components/sidebar/AllChats';
 import Login from '@/components/sidebar/auth/Login';
+import CustomToolTip from '@/components/re-usables/CustomToolTip';
 
 const roboto = Roboto({
 	variable: '--font-roboto',
@@ -52,7 +53,21 @@ export default function RootLayout({
 						</div>
 						<Login />
 					</aside>
-					<main className='flex-1 p-4'>{children}</main>
+					<main className='flex-1 p-4 !bg-dark mt-4 rounded-lg'>
+						<div className='flex flex-col h-full'>
+							<div className='flex items-center space-x-4 self-end bg-background rounded-lg p-2'>
+								<CustomToolTip
+									trigger={<Sun />}
+									content='Toggle theme'
+								/>
+								<CustomToolTip
+									trigger={<Settings2 />}
+									content='Settings'
+								/>
+							</div>
+							{children}
+						</div>
+					</main>
 				</div>
 			</body>
 		</html>

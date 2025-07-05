@@ -24,6 +24,7 @@
 	--color-surface: #181316;
 	--color-accent: #ff5733;
 	--color-muted: #888888;
+	--color-dark: #221d27;
 
 	/* fonts */
 	--font-roboto: var(--font-roboto), sans-serif;
