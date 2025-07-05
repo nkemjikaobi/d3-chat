@@ -1,7 +1,9 @@
+import WelcomePage from '@/pages/WelcomePage';
+
 export default function Home() {
 	return (
 		<div className=''>
-			<h1>children go here</h1>
+			<WelcomePage />
 		</div>
 	);
 }

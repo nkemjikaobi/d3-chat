@@ -55,7 +55,7 @@ export default function RootLayout({
 					</aside>
 					<main className='flex-1 p-4 !bg-dark mt-4 rounded-lg'>
 						<div className='flex flex-col h-full'>
-							<div className='flex items-center space-x-4 self-end bg-background rounded-lg p-2'>
+							<div className='flex items-center space-x-4 self-end bg-background rounded-lg'>
 								<CustomToolTip
 									trigger={<Sun />}
 									content='Toggle theme'
