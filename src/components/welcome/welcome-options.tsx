@@ -108,15 +108,15 @@ const options = [
 const defaultPrompts = [
 	{
 		id: 1,
-		prompt: 'How does AI work?.',
+		prompt: 'Negan and Rick are fighting in a bar, who wins?',
 	},
 	{
 		id: 2,
-		prompt: 'Is supernatural worth watching?',
+		prompt: 'Was Shiv Roy a good wife?',
 	},
 	{
 		id: 3,
-		prompt: 'What happenedo to Raymond Reddington?',
+		prompt: 'What happened to Raymond Reddington?',
 	},
 	{
 		id: 4,

@@ -25,6 +25,8 @@
 	--color-accent: #ff5733;
 	--color-muted: #888888;
 	--color-dark: #221d27;
+	--color-dark-secondary: #2D2632;
+	--color-dark-tertiary: #28202D;
 
 	/* fonts */
 	--font-roboto: var(--font-roboto), sans-serif;

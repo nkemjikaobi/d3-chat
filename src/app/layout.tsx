@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import SearchChats from '@/components/sidebar/SearchChats';
 import AllChats from '@/components/sidebar/AllChats';
 import Login from '@/components/sidebar/auth/Login';
-import CustomToolTip from '@/components/re-usables/CustomToolTip';
+import CustomToolTip from '@/components/re-usables/custom-tool-tip';
 
 const roboto = Roboto({
 	variable: '--font-roboto',
@@ -56,16 +56,10 @@ export default function RootLayout({
 					<main className='flex-1 p-4 !bg-dark mt-4 rounded-lg'>
 						<div className='flex flex-col h-full'>
 							<div className='flex items-center space-x-4 self-end bg-background rounded-lg'>
-								<CustomToolTip
-									trigger={<Sun />}
-									content='Toggle theme'
-								/>
-								<CustomToolTip
-									trigger={<Settings2 />}
-									content='Settings'
-								/>
+								<CustomToolTip trigger={<Sun />} content='Toggle theme' />
+								<CustomToolTip trigger={<Settings2 />} content='Settings' />
 							</div>
-							{children}
+							<div className='flex-1'>{children}</div>
 						</div>
 					</main>
 				</div>
