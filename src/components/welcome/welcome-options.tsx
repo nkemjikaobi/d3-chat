@@ -154,7 +154,7 @@ const WelcomeOptions: React.FC<WelcomeOptionsProps> = ({
 					onClick={() => setSelectedOptionId(option.id)}
 				>
 					{option.icon}
-					<h2 className='text-sm font-bold'>{option.title}</h2>
+					<h2 className='text-xs font-bold'>{option.title}</h2>
 				</div>
 			))}
 			{
