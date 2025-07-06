@@ -16,3 +16,8 @@ export interface Message {
 	previousMessageId: number | null;
 	nextMessageId: number | null;
 }
+
+export interface SuggestedPrompt {
+	id: string;
+	prompt: string;
+}

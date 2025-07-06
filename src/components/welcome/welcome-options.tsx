@@ -1,28 +1,30 @@
 'use client';
 import { Sparkles, FileText, Code, GraduationCap } from 'lucide-react';
-import React, { useState } from 'react';
+import React from 'react';
 import SuggestedPrompts from '@/components/welcome/suggested-prompts';
+import { SuggestedPrompt } from '@/types/chat';
+import { v4 as uuidv4 } from 'uuid';
 
-const options = [
+export const options = [
 	{
 		id: 1,
 		title: 'Create',
 		icon: <Sparkles />,
 		suggested_prompts: [
 			{
-				id: 1,
+				id: uuidv4(),
 				prompt: 'Write a short story about how to make a sandwich.',
 			},
 			{
-				id: 2,
+				id: uuidv4(),
 				prompt: 'How can I make my website more accessible?',
 			},
 			{
-				id: 3,
+				id: uuidv4(),
 				prompt: 'What are the best practices for SEO?',
 			},
 			{
-				id: 4,
+				id: uuidv4(),
 				prompt: 'What is the capital of Spain?',
 			},
 		],
@@ -33,22 +35,22 @@ const options = [
 		icon: <FileText />,
 		suggested_prompts: [
 			{
-				id: 1,
+				id: uuidv4(),
 				prompt:
 					'Tell me about the hidden gems of Tokyo that tourists often miss.',
 			},
 			{
-				id: 2,
+				id: uuidv4(),
 				prompt:
 					'What are the most fascinating deep sea creatures we know about?',
 			},
 			{
-				id: 3,
+				id: uuidv4(),
 				prompt:
 					'How do ancient civilizations like the Mayans predict solar eclipses?',
 			},
 			{
-				id: 4,
+				id: uuidv4(),
 				prompt: 'What makes the Northern Lights appear in different colors?',
 			},
 		],
@@ -59,22 +61,22 @@ const options = [
 		icon: <Code />,
 		suggested_prompts: [
 			{
-				id: 1,
+				id: uuidv4(),
 				prompt:
 					'Help me debug this React component that keeps re-rendering infinitely.',
 			},
 			{
-				id: 2,
+				id: uuidv4(),
 				prompt:
 					'Write a Python script to automatically organize my downloads folder.',
 			},
 			{
-				id: 3,
+				id: uuidv4(),
 				prompt:
 					"What's the difference between useState and useReducer in React?",
 			},
 			{
-				id: 4,
+				id: uuidv4(),
 				prompt:
 					'How do I implement a custom hook for API calls with loading states?',
 			},
@@ -86,47 +88,57 @@ const options = [
 		icon: <GraduationCap />,
 		suggested_prompts: [
 			{
-				id: 1,
+				id: uuidv4(),
 				prompt: "Explain quantum computing like I'm a high school student.",
 			},
 			{
-				id: 2,
+				id: uuidv4(),
 				prompt: 'Teach me the basics of machine learning in 5 minutes.',
 			},
 			{
-				id: 3,
+				id: uuidv4(),
 				prompt: 'What are the fundamental principles of design thinking?',
 			},
 			{
-				id: 4,
+				id: uuidv4(),
 				prompt: 'How do neural networks actually learn and improve over time?',
 			},
 		],
 	},
 ];
 
-const defaultPrompts = [
+export const defaultPrompts = [
 	{
-		id: 1,
+		id: uuidv4(),
 		prompt: 'Negan and Rick are fighting in a bar, who wins?',
 	},
 	{
-		id: 2,
+		id: uuidv4(),
 		prompt: 'Was Shiv Roy a good wife?',
 	},
 	{
-		id: 3,
+		id: uuidv4(),
 		prompt: 'What happened to Raymond Reddington?',
 	},
 	{
-		id: 4,
+		id: uuidv4(),
 		prompt: 'Did Sam Winchester break his shoulder in season 10?',
 	},
 ];
 
-const WelcomeOptions = () => {
-	const [selectedOptionId, setSelectedOptionId] = useState<number | null>(null);
+interface WelcomeOptionsProps {
+	selectedOptionId: number | null;
+	setSelectedOptionId: (id: number) => void;
+	setSelectedPrompt: React.Dispatch<
+		React.SetStateAction<SuggestedPrompt | null>
+	>;
+}
 
+const WelcomeOptions: React.FC<WelcomeOptionsProps> = ({
+	selectedOptionId,
+	setSelectedOptionId,
+	setSelectedPrompt,
+}) => {
 	const suggested_prompts = options.find(
 		option => option.id === selectedOptionId
 	)?.suggested_prompts;
@@ -145,7 +157,12 @@ const WelcomeOptions = () => {
 					<h2 className='text-sm font-bold'>{option.title}</h2>
 				</div>
 			))}
-			{<SuggestedPrompts prompts={suggested_prompts ?? defaultPrompts} />}
+			{
+				<SuggestedPrompts
+					prompts={suggested_prompts ?? defaultPrompts}
+					setSelectedPrompt={setSelectedPrompt}
+				/>
+			}
 		</div>
 	);
 };
