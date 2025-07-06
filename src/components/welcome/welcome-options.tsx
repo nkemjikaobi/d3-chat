@@ -1,7 +1,7 @@
 'use client';
 import { Sparkles, FileText, Code, GraduationCap } from 'lucide-react';
 import React, { useState } from 'react';
-import SuggestedPrompts from './suggested-prompts';
+import SuggestedPrompts from '@/components/welcome/suggested-prompts';
 
 const options = [
 	{
