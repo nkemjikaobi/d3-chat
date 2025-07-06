@@ -16,8 +16,8 @@ const AllChats = () => {
 
 	return (
 		<div className='flex flex-col gap-4'>
-			{todaysChats.length && <SortedChats chats={todaysChats} isToday={true} />}
-			{pastChats.length && <SortedChats chats={pastChats} isToday={false} />}
+			{todaysChats.length > 0 && <SortedChats chats={todaysChats} isToday={true} />}
+			{pastChats.length > 0 && <SortedChats chats={pastChats} isToday={false} />}
 		</div>
 	);
 };
@@ -27,7 +27,7 @@ export default AllChats;
 const chats = [
 	{
 		id: 1,
-		timestamp: '2025-06-21 10:00:00',
+		timestamp: '2025-07-21 10:00:00',
 		title: 'DND drag and drop issue',
 		isActive: true,
 		isPinned: false,
