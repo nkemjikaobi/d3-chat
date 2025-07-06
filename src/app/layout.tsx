@@ -56,8 +56,8 @@ export default function RootLayout({
 					<main className='flex-1 p-4 !bg-dark mt-4 rounded-lg'>
 						<div className='flex flex-col h-full'>
 							<div className='flex items-center space-x-4 self-end bg-background rounded-lg'>
-								<CustomToolTip trigger={<Sun />} content='Toggle theme' />
-								<CustomToolTip trigger={<Settings2 />} content='Settings' />
+								<CustomToolTip trigger={<Sun className='size-4' />} content='Toggle theme' />
+								<CustomToolTip trigger={<Settings2 className='size-4' />} content='Settings' />
 							</div>
 							<div className='flex-1'>{children}</div>
 						</div>
